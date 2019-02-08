@@ -1,0 +1,5 @@
+## IGNORE node_modules
+/node_modules
+
+## INGORE webpack built bundles
+/client/public/dist
