@@ -13,4 +13,10 @@ app.use(favicon(path.resolve(__dirname, '../client/src/assets/favicon.ico')));
 app.use(parser.json());
 app.use(morgan('dev'));
 
+// GET REQUESTS
+
+app.get('/physicians', (req, res) => {
+  
+})
+
 module.exports = app;
