@@ -15,7 +15,7 @@ class App extends React.Component {
     const { data } = this.state;
     return (
       <div className="application">
-        <h2>Hello World!</h2>
+        <h2>Notable Take Home</h2>
       </div>
     );
   }
