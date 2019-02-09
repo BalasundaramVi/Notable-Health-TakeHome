@@ -72,31 +72,31 @@ const appointments = {
     appointments: [
       {
         name: 'Philip J. Fry',
-        time: '8:00AM',
+        time: '12:00PM',
         kind: 'New Patient',
       },
       {
         name: 'Bender',
-        time: '8:30AM',
+        time: '2:30PM',
         kind: 'Tune-up',
       },
       {
         name: 'Leela',
-        time: '9:00AM',
+        time: '3:00PM',
         kind: 'Eye Apointment',
       },
       {
         name: 'Professor Farnsworth',
-        time: '9:30AM',
+        time: '5:30PM',
         kind: 'Follow-up',
       },
       {
         name: 'Zoidberg',
-        time: '10:00AM',
+        time: '10:00PM',
         kind: 'Undisclosed',
       },
     ],
   },
 };
 
-export { physicians, appointments };
+module.exports = { physicians, appointments };

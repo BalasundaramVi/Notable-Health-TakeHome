@@ -6,3 +6,24 @@ html, body {
 h2 {
   margin: 0;
 }
+
+.application {
+  display: flex;
+}
+
+.left-col {
+  padding: 20px;
+  background-color: rgba(211, 211, 211, 0.4);
+  flex: 1;
+}
+
+.right-col {
+  padding: 20px;
+  flex: 2;
+}
+
+.notable-logo {
+  color: mediumblue;
+  padding: 5px 0px;
+  margin: 10px 0px;
+}
