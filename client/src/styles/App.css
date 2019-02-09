@@ -9,6 +9,8 @@ h2 {
 
 .application {
   display: flex;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .left-col {
@@ -26,4 +28,8 @@ h2 {
   color: steelblue;
   padding: 5px 0px;
   margin: 10px 0px;
+}
+
+.logout-feature {
+  margin-top: 50px;
 }

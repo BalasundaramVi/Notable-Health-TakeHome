@@ -54,6 +54,9 @@ class App extends React.Component {
             physiciansList={physiciansList}
             currentPhysician={currentPhysician}
           />
+          <div className="logout-feature">
+            <button class="ui button">LOGOUT</button>
+          </div>
         </div>
         <div className="right-col">
           { physicianInfo === undefined ? '' : <PhysicianInfo physicianInfo={physicianInfo} />}
