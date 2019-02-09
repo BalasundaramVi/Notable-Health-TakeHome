@@ -49,7 +49,11 @@ class App extends React.Component {
       <div className="application">
         <div className="left-col">
           <h1 className="notable-logo">notable</h1>
-          <Physicians getInfo={this.getInfo} physiciansList={physiciansList} currentPhysician={currentPhysician} />
+          <Physicians
+            getInfo={this.getInfo}
+            physiciansList={physiciansList}
+            currentPhysician={currentPhysician}
+          />
         </div>
         <div className="right-col">
           { physicianInfo === undefined ? '' : <PhysicianInfo physicianInfo={physicianInfo} />}

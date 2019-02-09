@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../styles/PhysicianInfo.css';
+
 const PhysicianInfo = ({ physicianInfo }) => {
   const {
     firstName,
@@ -15,10 +17,10 @@ const PhysicianInfo = ({ physicianInfo }) => {
       <table className="ui striped table">
         <thead>
           <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Time</th>
-            <th>Kind</th>
+            <th className="th-head header-num">#</th>
+            <th className="th-head header-name">Name</th>
+            <th className="th-head header-time">Time</th>
+            <th className="th-head header-kind">Kind</th>
           </tr>
         </thead>
         <tbody>

@@ -68,7 +68,7 @@ const appointments = {
   Riviera: {
     firstName: 'Nick',
     lastName: 'Riviera',
-    email: 'riviera@notable.health.com',
+    email: 'riviera@notablehealth.com',
     appointments: [
       {
         name: 'Philip J. Fry',

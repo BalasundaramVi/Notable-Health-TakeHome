@@ -8,7 +8,7 @@ const Physicians = ({ getInfo, physiciansList, currentPhysician }) => (
     <div className="physicians-list">
       {physiciansList.map((physician, i) => {
         let curPhysician = false;
-        let lastName = physician.split(',')[0];
+        const lastName = physician.split(',')[0];
         if (currentPhysician === lastName) {
           curPhysician = true;
         }
@@ -16,8 +16,10 @@ const Physicians = ({ getInfo, physiciansList, currentPhysician }) => (
           <div
             className={`list-item physician-list-item-${i} ${curPhysician ? 'curPhysician' : ''}`}
             key={physician}
-            onClick={() => {getInfo(lastName);}}
+            onClick={() => { getInfo(lastName); }}
             role="button"
+            tabIndex={i}
+            onKeyUp={getInfo}
           >
             {physician}
           </div>
