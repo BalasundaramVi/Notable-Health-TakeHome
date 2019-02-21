@@ -5,7 +5,8 @@ const morgan = require('morgan');
 const parser = require('body-parser');
 const favicon = require('serve-favicon');
 
-const { physicians, appointments } = require('../data/data.js');
+const { physicians } = require('../data/data.js');
+let { appointments } = require('../data/data.js');
 
 const app = express();
 
@@ -25,6 +26,27 @@ app.get('/appointments/:physician', (req, res) => {
   const { physician } = req.params;
   const data = appointments[physician];
   res.send(data);
+});
+
+// DELETE REQUESTS
+
+app.delete('/appointments/:physician/:index', (req, res) => {
+  const { physician, index } = req.params;
+  appointments[physician].appointments.splice(index, 1);
+  res.end();
+});
+
+// PUT REQUEST
+
+app.put('/appointments/:physician', (req, res) => {
+  const { physician } = req.params;
+  const { name, time, kind } = req.body;
+  appointments[physician].appointments.push({
+    name,
+    time,
+    kind,
+  });
+  res.end();
 });
 
 module.exports = app;

@@ -17,6 +17,8 @@ class App extends React.Component {
     };
 
     this.getInfo = this.getInfo.bind(this);
+    this.removeAppointment = this.removeAppointment.bind(this);
+    this.addAppointment = this.addAppointment.bind(this);
   }
 
   componentDidMount() {
@@ -43,6 +45,25 @@ class App extends React.Component {
       });
   }
 
+  removeAppointment(index) {
+    const { currentPhysician } = this.state;
+    axios.delete(`/appointments/${currentPhysician}/${index}`)
+      .then(() => {
+        this.getInfo(currentPhysician);
+      });
+  }
+
+  addAppointment(name, time, kind) {
+    const { currentPhysician } = this.state;
+    axios.put(`/appointments/${currentPhysician}`, {
+      name,
+      time,
+      kind,
+    }).then(() => {
+      this.getInfo(currentPhysician);
+    })
+  }
+
   render() {
     const { physiciansList, currentPhysician, physicianInfo } = this.state;
     return (
@@ -55,11 +76,11 @@ class App extends React.Component {
             currentPhysician={currentPhysician}
           />
           <div className="logout-feature">
-            <button class="ui button">LOGOUT</button>
+            <button className="ui button">LOGOUT</button>
           </div>
         </div>
         <div className="right-col">
-          { physicianInfo === undefined ? '' : <PhysicianInfo physicianInfo={physicianInfo} />}
+          { physicianInfo === undefined ? '' : <PhysicianInfo physicianInfo={physicianInfo} addAppointment={this.addAppointment} removeAppointment={this.removeAppointment} />}
         </div>
       </div>
     );
